@@ -1,9 +1,13 @@
 @{
     ViewData["Title"] = "Login";
 }
+<form method="post" action='@Url.Action("ValidarLogin","Account")' id="formLogin">
+    <label for="nombre">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" required>
+     <label for="nombre">Contraseña:</label>
+    <input type="password" id="contraseña" name="contraseña" required>
+        <a href='@Url.Action("Olvide", "Account")'>Olvide mi contraseña</a>
+    <p class="mensaje">@ViewBag.Incorrecto</p>
+    <button type="submit">Enviar</button>
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido al Login!</h1>
-    
-
-</div>
+</form>

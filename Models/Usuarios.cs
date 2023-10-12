@@ -5,7 +5,7 @@ public class Usuarios
     public string Contraseña {set; get;}
     public string Nombre {set; get;}
     public string Email {set; get;}
-    public int Teléfono {set; get;}
+    public string Teléfono {set; get;}
     
 
     public Usuarios() {
@@ -15,7 +15,7 @@ public class Usuarios
         Email = "";
         Teléfono = 0;
     }
-    public Usuarios(string userName, string contraseña, string nombre, string email, int telefono)
+    public Usuarios(string userName, string contraseña, string nombre, string email, string telefono)
     {
         UserName = userName;
         Contraseña = contraseña;

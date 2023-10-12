@@ -18,16 +18,16 @@ public class AccountController : Controller
 
     return View("OlvideContraseña");
     }
-    public IActionResult OlvideComprobacion(string mail, string personal) {
-        Usuarios usuario = BD.Olvide(mail);
-        if (usuario != null) {
-            ViewBag.Contraseña = usuario.Contraseña;
-            return View("OlvideContraseña");
-        } else {
-            ViewBag.Contraseña = "Esa no es tu clave de respuesta personal";
-            return View("OlvideContraseña");
-        }
-    }
+    // public IActionResult OlvideComprobacion(string mail, string personal) {
+    //     Usuarios usuario = BD.Olvide(mail);
+    //     if (usuario != null) {
+    //         ViewBag.Contraseña = usuario.Contraseña;
+    //         return View("OlvideContraseña");
+    //     } else {
+    //         ViewBag.Contraseña = "Esa no es tu clave de respuesta personal";
+    //         return View("OlvideContraseña");
+    //     }
+    // }
     public IActionResult Login() {
 
         return View("Login");
@@ -41,16 +41,7 @@ public class AccountController : Controller
         }
     }
     public IActionResult Register() {
-         string[] Preguntas = new string[6];
-        Preguntas[0] = "¿Cuál es tu comida favorita?";
-        Preguntas[1] = "¿Qué lugar del mundo te gustaría visitar más?";
-        Preguntas[2] = "¿Tienes alguna afición o pasatiempo que te apasione?";
-        Preguntas[3] = "¿Cuál es tu libro o película favorita y por qué?";
-        Preguntas[4] = "¿Qué es lo que más te motiva en la vida?";
-        Preguntas[5] = "Si pudieras tener una conversación con cualquier persona, viva o fallecida, ¿quién sería y qué le dirías?";
-        Random random = new Random();
-        int numeroRandom = random.Next(0, 6);
-        @ViewBag.Pregunta = Preguntas[numeroRandom];
+         
         return View("Register");
     }
     public IActionResult IngresarRegister(string usuario, string contraseña, int telefono, string email, string nombre) {
